@@ -1,0 +1,19 @@
+from tkinter import *
+from random import *
+root = Tk()
+canvas = Canvas(root, width=400, height=400, bg="cyan")
+canvas.pack()
+def Rfig():
+    canvas.delete("all")
+    x =(170)
+    y =(170)
+    figure = randint(0,2)
+    if figure == 0:
+        canvas.create_rectangle(x, y, x+50, y+50, fill="blue")
+    elif figure == 1:
+        canvas.create_oval(x, y, x+50, y+50, fill="yellow")
+    elif figure == 2:
+        canvas.create_polygon(x, y, x+80, y+80, x+40, y+110, fill="red")
+button = Button(root, text="Сгенерировать", command=Rfig)
+button.pack()
+root.mainloop()
